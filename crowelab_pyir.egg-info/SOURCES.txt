@@ -11,6 +11,7 @@ setup.py
 ./pyir/igblast.py
 ./pyir/output.py
 ./pyir/parsers.py
+./pyir/resource_utils.py
 ./pyir/data/bin/SetupGermlineLibrary.sh
 ./pyir/data/bin/edit_imgt_file.pl
 ./pyir/data/bin/igblastn_darwin
@@ -181,6 +182,7 @@ pyir/filters.py
 pyir/igblast.py
 pyir/output.py
 pyir/parsers.py
+pyir/resource_utils.py
 pyir/data/.listing
 pyir/data/bin/SetupGermlineLibrary.sh
 pyir/data/bin/edit_imgt_file.pl
