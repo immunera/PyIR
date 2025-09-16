@@ -95,7 +95,7 @@ def get_local_data():
         os.makedirs(path.join(args.outdir, 'Ig', 'human'))
     except FileExistsError:
         pass
-    ig_c_file = path.join(args.outdir, 'Ig', 'human', 'human_gl_C.fasta')
+    ig_c_file = path.join(args.outdir, 'Ig', 'human', 'human_gl_C')
     ig_c_db = path.join(path.dirname(ig_c_file), path.basename(ig_c_file).split('.')[0])
 
     shutil.copy2(path.join(args.basedir,'crowelab_data','human_gl_C.fasta'), ig_c_file)
@@ -109,7 +109,7 @@ def get_local_data():
         os.makedirs(path.join(args.outdir, 'TCR', 'human'))
     except FileExistsError:
         pass
-    tcr_c_file = path.join(args.outdir, 'TCR', 'human', 'human_TCR_C.fasta')
+    tcr_c_file = path.join(args.outdir, 'TCR', 'human', 'human_TCR_C')
     tcr_c_db = path.join(path.dirname(tcr_c_file), path.basename(tcr_c_file).split('.')[0])
 
     shutil.copy2(path.join(args.basedir, 'crowelab_data', 'human_TCR_C.fasta'), tcr_c_file)
