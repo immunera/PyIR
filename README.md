@@ -96,6 +96,20 @@ pyir setup -o path/
 sudo pyir setup
 ```
 
+### 4. Unit Tests
+
+To install the app for testing, run:
+
+```bash
+pip install -e ".[test]"
+```
+
+To run the tests, run:
+
+```bash
+pytest
+```
+
 
 #### Potential Issues:
 ##### 1. Can't find pyir executable
