@@ -44,9 +44,6 @@ test = [
     "pytest>=7.0.0",
 ]
 
-[project.scripts]
-pyir = "crowelab_pyir:main"
-
 [tool.setuptools]
 packages = ["crowelab_pyir"]
 package-dir = {"crowelab_pyir" = "pyir"}
