@@ -44,6 +44,24 @@ def test_bcr():
             ],
         ).run()
         assert len(all_seqs_output.keys()) == original_fasta.count(">"), "Some sequences were not IgBlasted."
+        results = [
+            {
+                "expected_v_call": key.split("|")[1],
+                "v_call": result["v_call"].split(",")[0],
+                "fwr1_aa": result["fwr1_aa"],
+                "cdr1_aa": result["cdr1_aa"],
+                "fwr2_aa": result["fwr2_aa"],
+                "cdr2_aa": result["cdr2_aa"],
+                "fwr3_aa": result["fwr3_aa"],
+            }
+            for key, result in all_seqs_output.items()
+        ]
+        results = sorted(results, key=lambda x: x["expected_v_call"])
+        ighv1_18_results = [r for r in results if r["v_call"] == "IGHV1-18*01"]
+        assert ighv1_18_results, "IGHV1-18*01 not found"
+        assert ighv1_18_results[0]["cdr1_aa"] == "GYTFTSYG"
+        assert ighv1_18_results[0]["cdr2_aa"] == "ISAYNGNT"
+        assert ighv1_18_results[0]["fwr3_aa"] == "NYAQKLQGRVTMTTDTSTSTAYMELRSLRSDDTAVYYC"
 
 
 
@@ -94,6 +112,6 @@ def test_tcr():
         results = sorted(results, key=lambda x: x["expected_v_call"])
 
         trbv26_results = [r for r in results if r["v_call"] == "TRBV26*01"]
-        if trbv26_results:
-            assert trbv26_results[0]["cdr1_aa"] == "MNHVT"
-            assert trbv26_results[0]["cdr2_aa"] == "SPGTGS"
+        assert trbv26_results, "TRBV26*01 not found"
+        assert trbv26_results[0]["cdr1_aa"] == "MNHVT"
+        assert trbv26_results[0]["cdr2_aa"] == "SPGTGS"
