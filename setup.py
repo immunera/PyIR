@@ -1,4 +1,3 @@
-#!/usr/bin env python
 """
 Minimal setup.py for backward compatibility.
 Modern installations should use pyproject.toml via pip install.
@@ -8,7 +7,7 @@ import sys
 import os
 
 # Read version from pyproject.toml if possible, otherwise use fallback
-version = '1.6.2'
+version = '1.6.3'
 
 # Read dependencies from requirements.txt if it exists
 install_requires = []
