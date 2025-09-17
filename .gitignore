@@ -7,3 +7,10 @@ _config.yml
 dist/
 pyir/data/germlines/Ig/*
 pyir/data/germlines/TCR/*
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+*.coverage
+__pycache__/
